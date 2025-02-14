@@ -10,6 +10,8 @@
             text-align: center;
             background-color: #ffe6e6;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         #container {
             margin-top: 100px;
@@ -39,19 +41,31 @@
             margin-top: 10px;
         }
         #letter {
-            font-size: 24px;
-            background: white;
-            padding: 40px;
+            width: 90%;
+            max-width: 600px;
             margin: 50px auto;
-            width: 80%;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 20px #ff4d4d;
             text-align: center;
         }
         #images img {
-            width: 200px;
-            margin: 10px;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            display: block;
             border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            #letter {
+                width: 95%;
+                padding: 15px;
+            }
+            .btn {
+                font-size: 18px;
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
@@ -71,9 +85,9 @@
         <p>Forever yours,</p>
         <p><strong>Your Valentine Sara…</strong></p>
         <div id="images">
-            <img src="https://raw.githubusercontent.com/shavsva/iloveyou/main/IMG_6763.JPG" alt="Sweet Valentine Image 1">
+            <img src="https://github.com/shavsva/iloveyou/blob/a871e8158204d10767ee790b32c883b5339546a4/IMG_6763.JPG" alt="Sweet Valentine Image 1">
             <img src="https://raw.githubusercontent.com/shavsva/iloveyou/refs/heads/main/is-it-a-persian-thing-to-stick-the-tongue-out-v0-yvn3au7731ub1.jpg.webp" alt="Sweet Valentine Image 2">
-            <img src="https://raw.githubusercontent.com/shavsva/iloveyou/main/IMG_6761.JPG" alt="Sweet Valentine Image 3">
+            <img src="https://github.com/shavsva/iloveyou/blob/main/IMG_6761.JPG" alt="Sweet Valentine Image 3">
         </div>
     </div>
 
@@ -104,6 +118,10 @@
             document.getElementById("letter").classList.remove("hidden");
         }
     </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
