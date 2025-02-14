@@ -6,7 +6,7 @@
     <title>Be My Valentine?</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', serif;
             text-align: center;
             background-color: #ffe6e6;
             overflow: hidden;
@@ -38,32 +38,15 @@
             color: #d6336c;
             margin-top: 10px;
         }
-        #envelope {
-            position: relative;
-            width: 200px;
-            height: 150px;
-            background: #ff4d4d;
-            margin: 50px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-        }
         #letter {
-            position: absolute;
-            top: 100%;
-            width: 80%;
-            height: auto;
+            font-size: 24px;
             background: white;
-            font-family: 'Times New Roman', serif;
             padding: 40px;
+            margin: 50px auto;
+            width: 80%;
             border-radius: 10px;
-            transition: top 1s ease-in-out, transform 1s ease-in-out;
             box-shadow: 0px 0px 20px #ff4d4d;
             text-align: center;
-            transform: scale(0.1);
         }
         #images img {
             width: 200px;
@@ -76,25 +59,21 @@
 
     <div id="container">
         <h1>Will you be my Valentine? ❤️</h1>
-        <button id="yesBtn" class="btn" onclick="showEnvelope()">Yes</button>
+        <button id="yesBtn" class="btn" onclick="showLetter()">Yes</button>
         <button id="noBtn" class="btn" onclick="showMessages()">No</button>
         <div id="messages"></div>
     </div>
 
-    <div id="envelopeContainer" class="hidden">
-        <div id="envelope" onclick="openLetter()">
-            <div id="letter">
-                <h2>Mon Amour,</h2>
-                <p>You mean the world to me. I am so grateful for your love, your kindness, and how you make my heart smile. Kanbghik ❤️</p>
-                <p>Happy Valentine's Day, mon amour!</p>
-                <p>Forever yours,</p>
-                <p><strong>Your Valentine Sara…</strong></p>
-                <div id="images">
-                    <img src="https://github.com/shavsva/iloveyou/blob/a871e8158204d10767ee790b32c883b5339546a4/IMG_6763.JPG" alt="Sweet Valentine Image 1">
-                    <img src="https://raw.githubusercontent.com/shavsva/iloveyou/refs/heads/main/is-it-a-persian-thing-to-stick-the-tongue-out-v0-yvn3au7731ub1.jpg.webp" alt="Sweet Valentine Image 2">
-                    <img src="https://github.com/shavsva/iloveyou/blob/main/IMG_6761.JPG" alt="Sweet Valentine Image 3">
-                </div>
-            </div>
+    <div id="letter" class="hidden">
+        <h2>Mon Amour,</h2>
+        <p>You mean the world to me. I am so grateful for your love, your kindness, and how you make my heart smile. Kanbghik ❤️</p>
+        <p>Happy Valentine's Day, mon amour!</p>
+        <p>Forever yours,</p>
+        <p><strong>Your Valentine Sara…</strong></p>
+        <div id="images">
+            <img src="https://github.com/shavsva/iloveyou/blob/a871e8158204d10767ee790b32c883b5339546a4/IMG_6763.JPG" alt="Sweet Valentine Image 1">
+            <img src="https://raw.githubusercontent.com/shavsva/iloveyou/refs/heads/main/is-it-a-persian-thing-to-stick-the-tongue-out-v0-yvn3au7731ub1.jpg.webp" alt="Sweet Valentine Image 2">
+            <img src="https://github.com/shavsva/iloveyou/blob/main/IMG_6761.JPG" alt="Sweet Valentine Image 3">
         </div>
     </div>
 
@@ -120,18 +99,11 @@
             }
         }
 
-        function showEnvelope() {
+        function showLetter() {
             document.getElementById("container").style.display = "none";
-            document.getElementById("envelopeContainer").classList.remove("hidden");
-        }
-
-        function openLetter() {
-            let letter = document.getElementById("letter");
-            letter.style.top = "10%";
-            letter.style.transform = "scale(1)";
+            document.getElementById("letter").classList.remove("hidden");
         }
     </script>
 
 </body>
 </html>
-
