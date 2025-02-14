@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+        }
+        #container {
+            margin-top: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yesBtn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #noBtn {
+            background-color: #cccccc;
+        }
+        .sweet-message {
+            font-size: 20px;
+            color: #d6336c;
+            margin-top: 10px;
+        }
+        #letter {
+            font-size: 24px;
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ff4d4d;
+        }
+        #images img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <button id="yesBtn" class="btn" onclick="showLove()">Yes</button>
+        <button id="noBtn" class="btn" onclick="showMessages()">No</button>
+        <div id="messages"></div>
+    </div>
+
+    <div id="letter" class="hidden">
+        <h2>My Love,</h2>
+        <p> You mean the world to me. I am so grateful for your love, your kindness, and how you make my heart smile. Kanbghik ❤️</p>
+        <p>Happy Valentine's Day, my love!</p>
+        <p>Forever yours,</p>
+        <p><strong>Your Valentine Sara…</strong></p>
+        <div id="images">
+            <img src="https://placedog.net/400/300" alt="Cute Dog">
+            <img src="https://placedog.net/401/301" alt="Cute Dog">
+            <img src="https://placedog.net/402/302" alt="Cute Dog">
+        </div>
+    </div>
+
+    <script>
+        let messages = [
+            "Are you sure? 🥺",
+            "Really? 💔",
+            "Spadaj….",
+            "I’ll be very sad 😢",
+            "One last chance! BRO"
+        ];
+        let index = 0;
+
+        function showMessages() {
+            if (index < messages.length) {
+                let msgDiv = document.createElement("div");
+                msgDiv.className = "sweet-message";
+                msgDiv.innerText = messages[index];
+                document.getElementById("messages").appendChild(msgDiv);
+                index++;
+            }
+        }
+
+        function showLove() {
+            document.getElementById("container").style.display = "none";
+            document.getElementById("letter").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
