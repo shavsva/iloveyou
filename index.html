@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Times New Roman', serif;
             text-align: center;
             background-color: #ffe6e6;
             margin: 0;
@@ -23,6 +23,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            transition: transform 0.3s ease;
         }
         #yesBtn {
             background-color: #ff4d4d;
@@ -47,6 +48,7 @@
             overflow: hidden;
             transform: rotate(45deg);
             transition: transform 1s ease;
+            opacity: 0;
         }
 
         #envelope .flap {
@@ -84,11 +86,8 @@
             display: none;
         }
 
-        #images img {
-            transition: transform 0.5s ease;
-        }
-        #images img:hover {
-            transform: scale(1.1);
+        .yes-big {
+            transform: scale(1.5);
         }
 
     </style>
@@ -98,11 +97,11 @@
     <div id="container">
         <h1>Will you be my Valentine? ❤️</h1>
         <button id="yesBtn" class="btn" onclick="showLove()">Yes</button>
-        <button id="noBtn" class="btn" onclick="showMessages()">No</button>
+        <button id="noBtn" class="btn" onclick="makeYesBigger()">No</button>
         <div id="messages"></div>
     </div>
 
-    <div id="envelope">
+    <div id="envelope" class="hidden">
         <div class="flap" id="flap"></div>
     </div>
 
@@ -129,6 +128,10 @@
         ];
         let index = 0;
 
+        function makeYesBigger() {
+            document.getElementById("yesBtn").classList.add("yes-big");
+        }
+
         function showMessages() {
             if (index < messages.length) {
                 let msgDiv = document.createElement("div");
@@ -142,17 +145,20 @@
         function showLove() {
             document.getElementById("container").style.display = "none";
             document.getElementById("letter").classList.remove("hidden");
+            document.getElementById("envelope").classList.remove("hidden");
 
             // Open the envelope flap
-            document.getElementById("flap").style.transform = "rotate(180deg)";
-
-            // Show the letter with animation
             setTimeout(function() {
-                document.getElementById("letter").style.opacity = 1;
-                document.getElementById("letter").style.transform = "translateY(0)";
-            }, 1000);  // Wait for the envelope to open first
+                document.getElementById("flap").style.transform = "rotate(180deg)";
+                // Show the letter with animation
+                setTimeout(function() {
+                    document.getElementById("letter").style.opacity = 1;
+                    document.getElementById("letter").style.transform = "translateY(0)";
+                }, 1000);  // Wait for the envelope to open first
+            }, 500);
         }
     </script>
 
 </body>
 </html>
+
